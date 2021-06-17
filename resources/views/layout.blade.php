@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Back Office Projects Management</title>
+        <title class='grand-title'>Back Office Projects Management</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 <body>
     <div id="Header">
         <nav class="navbar navbar-light bg-light justify-content-between">
-            <a href="#" class="navbar-brand"><b>Back-Office</b></a>
+            <a href="#" class="navbar-brand"><b>Back-Office Gestion des mini-projets</b></a>
             <form class="form-inline">
                 <a href="#"><button class="btn btn-block btn-primary">Logout</button></a>
             </form>
@@ -34,16 +34,16 @@
     <div  id="Content">
         <ul class="navbar">
             <li>
-            <a href="#" class="dashboard"><b>Dashboard</b></a>
+            <a href="#" class="dashboard"><b class='dash'>Dashboard</b></a>
             <!--<a class="navbar-brand" href="/">
                 <div class="logo-image">
                         <img src="/css/etud.jpg" class="img-fluid">Etudiant
                 </div>-->
             </a>
             </li>
-            <li><img src="/css/etud.png" class="img-fluid"><a href="/dashboard/etudiants">Etudiants</a></li>
-            <li><img src="/css/prof.png" class="img-fluid"><a href="/dashboard/enseignants">Enseignants</a></li>
-            <li><img src="/css/role.png" class="img-fluid"><a href="/dashboard/roles">Roles</a></li>
+            <li><a href="/dashboard/etudiants" class='dash-btn'>Etudiants</a></li>
+            <li><a href="/dashboard/enseignants" class='dash-btn'>Enseignants</a></li>
+            <li><a href="/dashboard/roles" class='dash-btn'>Roles</a></li>
         </ul>
     </div>
     @yield('content');    

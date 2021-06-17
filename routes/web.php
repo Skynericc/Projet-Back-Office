@@ -28,3 +28,13 @@ Route::get('/dashboard/enseignants', [EnseignantController::class,'index']);
 
 use App\Http\Controllers\RolesController;
 Route::get('/dashboard/roles', [RolesController::class,'index']);
+
+Route::get('/dashboard/etudiants/ajouteretudiant', function () {
+    return view('AjouterEtudiant');
+});
+Route::get('/dashboard/roles/ajouterrole', function () {
+    return view('AjouterRole');
+});
+Route::get('/dashboard/enseignants/ajouterenseignant', function () {
+    return view('AjouterEnseignant');
+});

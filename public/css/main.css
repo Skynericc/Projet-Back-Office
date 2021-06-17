@@ -5,18 +5,20 @@ ul {
     padding: 0;
     width: 200px;;
   }
-  
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
+.dashboard{
+    font-size: large;
 }
+.dash:hover{
+    color:white;
+}
+  
+
   
 /* Change the link color on hover */
 li a:hover {
-    background-color: #555;
+    /*background-color: rgb(20, 18, 109);*/
     color: white;
+    text-decoration: none;
 }
 body, html{ 
     width:100%; 
@@ -29,20 +31,22 @@ body, html{
 #Content{
     width: 250px; 
     height: calc(100% - 56px);
-    background-color: #efefef;
+    background-color: #efefefe5;
+    display: flex;
+    float:left;
+    
 }
 .navbar{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 ul li {
     margin: 50px;
 }
-.dashboard{
-    font-family: 'Nunito', sans-serif;
-    font-size: large;
-}
+
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -50,11 +54,49 @@ table {
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #dddddde8;
     text-align: left;
     padding: 8px;
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #dddddde8;
   }
+  .dash-btn{
+    
+        background-color: #663399;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        
+      
+  }
+  .dash-btn:hover{
+      background-color: #492370;
+  }
+ b{
+      color: #663399;
+  }
+.div-tab{
+    padding: 2rem;
+    clear:right;
+    padding-left: 17rem;
+    
+   }
+h2{
+    padding: 1rem;
+}
+#add{
+    margin-bottom: 3.5rem;
+}
+#right{
+    margin-left: 46rem;
+}
+#button-submit{
+    margin-top:3rem;
+}
