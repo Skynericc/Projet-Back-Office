@@ -21,9 +21,9 @@
         <td>{{$role->Nombre_Postulations}}</td>
         <td>{{$role->Nombre_Projets}}</td>
         <td>{{$role->Maniere_Affectation}}</td>
-        <td>
-        <a href="#"><button type="button" class="btn btn-success">Modifier</button></a>
-        <a href="#"><button type="button" class="btn btn-danger">Supprimer</button></a>
+        <td>           
+            <a href="#"><button type="button" class="btn btn-success">Modifier</button></a>
+            <a href={{ "delete/".$role['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

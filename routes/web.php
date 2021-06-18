@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\EnseignantController;
+use App\Http\Controllers\RolesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,15 +20,15 @@ Route::get('/', function () {
 });
 
 Route::post('/dashboard', function(){
-    return view('layout',['name'=>'yahya']);
+    return view('layout');
 });
-use App\Http\Controllers\EtudiantController;
+
 Route::get('/dashboard/etudiants', [EtudiantController::class,'index']);
 
-use App\Http\Controllers\EnseignantController;
+
 Route::get('/dashboard/enseignants', [EnseignantController::class,'index']);
 
-use App\Http\Controllers\RolesController;
+
 Route::get('/dashboard/roles', [RolesController::class,'index']);
 
 Route::get('/dashboard/etudiants/ajouteretudiant', function () {
@@ -38,3 +40,10 @@ Route::get('/dashboard/roles/ajouterrole', function () {
 Route::get('/dashboard/enseignants/ajouterenseignant', function () {
     return view('AjouterEnseignant');
 });
+
+Route::get('/dashboard/delete/{id}', [EtudiantController::class,'delete']);
+Route::get('/dashboard/delete/{id}', [EnseignantController::class,'delete']);
+Route::get('/dashboard/delete/{id}', [RolesController::class,'delete']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -26,7 +26,7 @@
         <nav class="navbar navbar-light bg-light justify-content-between">
             <a href="#" class="navbar-brand"><b>Back-Office Gestion des mini-projets</b></a>
             <form class="form-inline">
-                <a href="#"><button class="btn btn-block btn-primary">Logout</button></a>
+               <button class="btn btn-block btn-primary"> <a href="/">Logout</a></button>
             </form>
         </nav>
     </div>

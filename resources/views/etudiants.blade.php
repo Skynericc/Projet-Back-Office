@@ -26,9 +26,9 @@
         <td>{{$etudiant->Fillière}}</td>
         <td>{{$etudiant->Téléphone}}</td>
         <td>{{$etudiant->Compétences}}</td>
-        <td>
+        <td>           
             <a href="#"><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href="#"><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "delete/".$etudiant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

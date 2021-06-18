@@ -5,7 +5,7 @@
 <div class="div-tab">
     
 <h2>Ajouter un role
-<a href="/dashboard/roles"><button id='right' class='btn btn-outline-primary'><- retour a la liste</button></a>
+<button id='right' class='btn btn-outline-primary'><a style="text-decoration:none" href="/dashboard/etudiants"><- retour a la liste</a></button>
 
 </h2>
 
