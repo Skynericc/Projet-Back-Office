@@ -17,4 +17,18 @@ class RolesController extends Controller
 
         return redirect('/dashboard/roles');
     }
+    public function edit($id){
+        $role = Role::find($id);
+        return view('modifierRoles',['role'=>$role]);
+    }
+    public function update(Request $req){
+        $role = Role::find($req->id);
+        $role->Nom=$req->Nom;
+        $role->Description=$req->Description;
+        $role->Nombre_Postulations=$req->Nombre_Postulations;
+        $role->Nombre_Projets=$req->Nombre_Projets;
+        $role->Maniere_Affectation=$req->Maniere_Affectation;
+        $role->save();
+        return redirect('/dashboard/roles');
+    }
 }

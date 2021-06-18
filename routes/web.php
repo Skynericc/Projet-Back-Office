@@ -44,6 +44,20 @@ Route::get('/dashboard/enseignants/ajouterenseignant', function () {
 Route::get('/dashboard/delete/{id}', [EtudiantController::class,'delete']);
 Route::get('/dashboard/delete/{id}', [EnseignantController::class,'delete']);
 Route::get('/dashboard/delete/{id}', [RolesController::class,'delete']);
+
+Route::get('/dashboard/edit/etudiant/{id}', [EtudiantController::class,'edit']);
+Route::post('/dashboard/edit/etudiant', [EtudiantController::class,'update']);
+
+Route::get('/dashboard/edit/enseignant/{id}', [EnseignantController::class,'edit']);
+Route::post('/dashboard/edit/enseignant', [EnseignantController::class,'update']);
+
+
+Route::get('/dashboard/edit/role/{id}', [RolesController::class,'edit']);
+Route::post('/dashboard/edit/role', [RolesController::class,'update']);
+
+
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
