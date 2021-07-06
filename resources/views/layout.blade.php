@@ -46,6 +46,6 @@
             <li><a href="/dashboard/roles" id='btn3' class='dash-btn'>Roles</a></li>
         </ul>
     </div>
-    @yield('content');    
+    @yield('content')   
 </body>
 </html>
