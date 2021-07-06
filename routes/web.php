@@ -41,8 +41,8 @@ Route::get('/dashboard/enseignants/ajouterenseignant', function () {
     return view('AjouterEnseignant');
 });
 
-Route::get('/dashboard/delete/{id}', [EtudiantController::class,'delete']);
-Route::get('/dashboard/delete/{id}', [EnseignantController::class,'delete']);
+Route::get('/dashboard/delete/etudiant/{id}', [EtudiantController::class,'delete']);
+Route::get('/dashboard/delete/enseignant/{id}', [EnseignantController::class,'delete']);
 Route::get('/dashboard/delete/{id}', [RolesController::class,'delete']);
 
 Route::get('/dashboard/edit/etudiant/{id}', [EtudiantController::class,'edit']);
@@ -54,6 +54,15 @@ Route::post('/dashboard/edit/enseignant', [EnseignantController::class,'update']
 
 Route::get('/dashboard/edit/role/{id}', [RolesController::class,'edit']);
 Route::post('/dashboard/edit/role', [RolesController::class,'update']);
+
+Route::get('/dashboard/etudiants/AjouterEtudiant', [EtudiantController::class,'create']);
+Route::post('/dashboard/etudiants', [EtudiantController::class,'store']);
+
+Route::get('/dashboard/enseignant/AjouterEnseignant', [EnseignantController::class,'create']);
+Route::post('/dashboard/enseignants', [EnseignantController::class,'store']);
+
+Route::get('/dashboard/roles/AjouterRole', [RolesController::class,'create']);
+Route::post('/dashboard/roles', [RolesController::class,'store']);
 
 
 

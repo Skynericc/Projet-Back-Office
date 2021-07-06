@@ -25,9 +25,9 @@
         <td>{{$enseignant->Roles}}</td>
         <td>{{$enseignant->Téléphone}}</td>
         <td>{{$enseignant->Projets}}</td>
-        <td>           
+        <td class='del_edit_btn'>           
             <a href={{ "edit/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

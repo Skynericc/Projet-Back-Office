@@ -17,6 +17,9 @@ class RolesController extends Controller
 
         return redirect('/dashboard/roles');
     }
+    public function create(){
+        return view('AjouterRole');
+    }
     public function edit($id){
         $role = Role::find($id);
         return view('modifierRoles',['role'=>$role]);
@@ -29,6 +32,20 @@ class RolesController extends Controller
         $role->Nombre_Projets=$req->Nombre_Projets;
         $role->Maniere_Affectation=$req->Maniere_Affectation;
         $role->save();
+        return redirect('/dashboard/roles');
+    }
+    public function store(){
+
+        
+
+        $role = new Role();
+
+        $role->Nom = request('rolename');
+        $role->Description = request('inlineRadioOptions');
+        
+
+        $role->save();
+
         return redirect('/dashboard/roles');
     }
 }
