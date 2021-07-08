@@ -23,7 +23,7 @@
         <td>{{$role->Maniere_Affectation}}</td>
         <td>           
             <a href={{ "edit/role/".$role['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/".$role['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "delete/role/".$role['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach
