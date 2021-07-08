@@ -42,10 +42,10 @@
             </a>
             </li>
             <li><a href="/dashboard/etudiants" class='dash-btn'>Etudiants</a></li>
-            <li><a href="/dashboard/enseignants" class='dash-btn'>Enseignants</a></li>
-            <li><a href="/dashboard/roles" class='dash-btn'>Roles</a></li>
+            <li><a href="/dashboard/enseignants" id='btn2' class='dash-btn'>Enseignants</a></li>
+            <li><a href="/dashboard/roles" id='btn3' class='dash-btn'>Roles</a></li>
         </ul>
     </div>
-    @yield('content');    
+    @yield('content')   
 </body>
 </html>

@@ -17,6 +17,9 @@ class EtudiantController extends Controller
 
         return redirect('/dashboard/etudiants');
     }
+    public function create(){
+        return view('AjouterEtudiant');
+    }
     public function edit($id){
         $etudiant = Etudiant::find($id);
         return view('modifierEtudiant',['etudiant'=>$etudiant]);
@@ -30,6 +33,21 @@ class EtudiantController extends Controller
         $etudiant->Téléphone=$req->Téléphone;
         $etudiant->Compétences=$req->Compétences;
         $etudiant->save();
+        return redirect('/dashboard/etudiants');
+    }
+    public function store(){
+
+        $etudiant = new Etudiant();
+
+        $etudiant->Nom_Complet = request('name');
+        $etudiant->Email = request('email');
+        $etudiant->Mot_de_passe = request('mdp');
+        $etudiant->Fillière = request('filiere');
+        $etudiant->Téléphone = request('tel');
+        $etudiant->Compétences = request('compt');
+
+        $etudiant->save();
+
         return redirect('/dashboard/etudiants');
     }
     

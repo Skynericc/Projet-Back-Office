@@ -32,4 +32,32 @@ class EnseignantController extends Controller
         $enseignant->save();
         return redirect('/dashboard/enseignants');
     }
+    public function create(){
+        return view('AjouterEnseignant');
+    }
+    public function store(){
+
+        $roles = request('role');
+
+        $rolesArray = array();
+    
+        foreach($roles as $role){
+           $rolesArray[] = $role;
+        }
+
+        $enseignant = new Enseignant();
+
+        $enseignant->Nom_Complet = request('name');
+        $enseignant->Email = request('email');
+        $enseignant->Mot_de_passe = request('mdp');
+        $enseignant->Téléphone = request('tel');
+        $enseignant->roles = json_encode($rolesArray);
+        
+        $enseignant->Projets = request('projets');
+        
+
+        $enseignant->save();
+
+        return redirect('/dashboard/enseignants');
+    }
 }
