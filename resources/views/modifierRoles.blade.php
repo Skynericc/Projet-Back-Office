@@ -22,11 +22,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nombre de postulation</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="Nombre_Postulation"value="{{$role->Nombre_Postulation}}">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Nombre_Postulations" value="{{$role->Nombre_Postulations}}">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nombre de projets Max</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="Nombre_Projets"value="{{$role->Nombre_Projets}}">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="Nombre_Projets" value="{{$role->Nombre_Projets}}">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Manière d'affectation</label>

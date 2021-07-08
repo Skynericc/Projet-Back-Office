@@ -43,7 +43,11 @@ Route::get('/dashboard/enseignants/ajouterenseignant', function () {
 
 Route::get('/dashboard/delete/etudiant/{id}', [EtudiantController::class,'delete']);
 Route::get('/dashboard/delete/enseignant/{id}', [EnseignantController::class,'delete']);
+
+Route::get('/dashboard/delete/role/{id}', [RolesController::class,'delete']);
+
 Route::get('/dashboard/delete/{id}', [RolesController::class,'delete']);
+
 
 Route::get('/dashboard/edit/etudiant/{id}', [EtudiantController::class,'edit']);
 Route::post('/dashboard/edit/etudiant', [EtudiantController::class,'update']);
