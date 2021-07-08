@@ -4,8 +4,9 @@
 @section('content')
 <div class="div-tab">
 <h2>Roles</h2>
-
 <div id='AddButt'><a href="/dashboard/roles/ajouterrole"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter role</button></a></div>
+
+
 <div class="input-group" id='searchBox3'>
 <form type="get" action="{{ url('/searchRoles') }}" id='searchform'>
   <input type="submit" value="Find" class="btn btn-outline-primary" style="float: right"/>
@@ -25,7 +26,7 @@
         <th>Manière d'affectation</th>
         <th>Actions</th>
     </tr>
-@foreach($roles as $role)
+@foreach($search_role as $role)
     <tr>
         <td>{{$role->Nom}}</td>
         <td>{{$role->Description}}</td>
@@ -33,8 +34,8 @@
         <td>{{$role->Nombre_Projets}}</td>
         <td>{{$role->Maniere_Affectation}}</td>
         <td>           
-            <a href={{ "edit/role/".$role['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/".$role['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "dashboard/edit/role/".$role['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
+            <a href={{ "dashboard/delete/".$role['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

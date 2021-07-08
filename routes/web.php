@@ -64,6 +64,11 @@ Route::post('/dashboard/enseignants', [EnseignantController::class,'store']);
 Route::get('/dashboard/roles/AjouterRole', [RolesController::class,'create']);
 Route::post('/dashboard/roles', [RolesController::class,'store']);
 
+Route::get('/search', [EtudiantController::class,'search']);
+Route::get('/searchRoles', [RolesController::class,'search']);
+Route::get('/searchEnseignant', [EnseignantController::class,'search']);
+
+
 
 
 

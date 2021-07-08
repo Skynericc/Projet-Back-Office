@@ -48,4 +48,11 @@ class RolesController extends Controller
 
         return redirect('/dashboard/roles');
     }
+    public function search(){
+        $search_text=$_GET['query'];
+
+        $search_role=Role::where('Nom','LIKE','%'.$search_text.'%')->get();
+        
+        return view('SearchRole',compact('search_role'));
+    }
 }

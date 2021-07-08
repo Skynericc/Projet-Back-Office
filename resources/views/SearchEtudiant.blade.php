@@ -27,7 +27,7 @@
         <th>Compétences</th>
         <th>Actions</th>
     </tr>
-@foreach($etudiants as $etudiant)
+@foreach($search_etudiant as $etudiant)
     <tr>
         <td>{{$etudiant->Nom_Complet}}</td>
         <td>{{$etudiant->id}}</td>
@@ -37,8 +37,8 @@
         <td>{{$etudiant->Téléphone}}</td>
         <td>{{$etudiant->Compétences}}</td>
         <td>           
-            <a href={{ "edit/etudiant/".$etudiant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/etudiant/".$etudiant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "dashboard/edit/etudiant/".$etudiant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
+            <a href={{ "dashboard/delete/etudiant/".$etudiant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

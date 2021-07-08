@@ -34,7 +34,7 @@
     <div  id="Content">
         <ul class="navbar">
             <li>
-            <a href="#" class="dashboard"><b class='dash'>Dashboard</b></a>
+            <a  class="dashboard"><b class='dash'>Dashboard</b></a>
             <!--<a class="navbar-brand" href="/">
                 <div class="logo-image">
                         <img src="/css/etud.jpg" class="img-fluid">Etudiant

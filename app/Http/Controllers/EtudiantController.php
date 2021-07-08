@@ -51,4 +51,12 @@ class EtudiantController extends Controller
         return redirect('/dashboard/etudiants');
     }
     
+    public function search(){
+        $search_text=$_GET['query'];
+
+        $search_etudiant=Etudiant::where('Nom_Complet','LIKE','%'.$search_text.'%')->get();
+        
+        return view('SearchEtudiant',compact('search_etudiant'));
+    }
+    
 }

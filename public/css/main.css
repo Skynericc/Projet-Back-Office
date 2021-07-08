@@ -112,3 +112,29 @@ h2{
     width:210px;
 
 }
+#searchBox{
+    width: 20rem;
+    text-align:justify;
+    left:40rem;
+    float:left;
+    display: table;
+
+
+}
+#AddButt{
+    display:inline;
+    float:left;
+}
+#searchBox2{
+    width: 20rem;
+    text-align:justify;
+    left:46rem
+}
+#searchBox3{
+    width: 20rem;
+    text-align:justify;
+    left:49rem
+}
+
+
+

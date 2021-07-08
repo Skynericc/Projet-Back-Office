@@ -4,7 +4,6 @@
 @section('content')
 <div class="div-tab">
 <h2>Enseignants</h2>
-
 <div id='AddButt'><a href="/dashboard/enseignants/ajouterenseignant"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter enseignant</button></a></div>
 <div class="input-group" id='searchBox2'>
 <form type="get" action="{{ url('/searchEnseignant') }}" id='searchform'>
@@ -27,7 +26,7 @@
         <th>Projets</th>
         <th>Actions</th>
     </tr>
-@foreach($enseignants as $enseignant)
+@foreach($search_enseignant as $enseignant)
     <tr>
         <td>{{$enseignant->Nom_Complet}}</td>
         <td>{{$enseignant->id}}</td>
@@ -37,8 +36,8 @@
         <td>{{$enseignant->Téléphone}}</td>
         <td>{{$enseignant->Projets}}</td>
         <td class='del_edit_btn'>           
-            <a href={{ "edit/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "dashboard/edit/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
+            <a href={{ "dashboard/delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
         </td>
      </tr>
 @endforeach

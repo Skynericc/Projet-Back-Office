@@ -60,4 +60,11 @@ class EnseignantController extends Controller
 
         return redirect('/dashboard/enseignants');
     }
+    public function search(){
+        $search_text=$_GET['query'];
+
+        $search_enseignant=Enseignant::where('Nom_Complet','LIKE','%'.$search_text.'%')->get();
+        
+        return view('SearchEnseignant',compact('search_enseignant'));
+    }
 }
