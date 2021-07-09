@@ -135,6 +135,13 @@ h2{
     text-align:justify;
     left:49rem
 }
+#title_nav{
+    left:0px;
+}
+#nav_text{
+    font-size: x-large;
+    left: 5px;
+}
 
 
 
