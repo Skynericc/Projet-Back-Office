@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/dashboard', function(){
-    return view('layout');
-});
-
 Route::get('/dashboard/etudiants', [EtudiantController::class,'index']);
 
 
