@@ -38,17 +38,28 @@ class EtudiantController extends Controller
         return redirect('/dashboard/etudiants');
     }
     public function store(){
+        try{
+            $etudiant = new Etudiant();
 
-        $etudiant = new Etudiant();
-
-        $etudiant->Nom_Complet = request('name');
-        $etudiant->Email = request('email');
-        $etudiant->Mot_de_passe = request('mdp');
-        $etudiant->Fillière = request('filiere');
-        $etudiant->Téléphone = request('tel');
-        $etudiant->Compétences = request('compt');
-
-        $etudiant->save();
+            $etudiant->Nom_Complet = request('name');
+            $etudiant->Email = request('email');
+            $etudiant->Mot_de_passe = request('mdp');
+            $etudiant->Fillière = request('filiere');
+            $etudiant->Téléphone = request('tel');
+            $etudiant->Compétences = request('compt');
+    
+            $etudiant->save();
+        } catch (\Exception $exception){
+            /*echo "
+                <script type=\"text/javascript\">;
+                var email = document.getElementById(\"exampleInputEmail1\");
+                email.setCustomValidity(\"Cet Email existe déja!\");
+                </script>
+            ";*/
+            echo "Cet Email existe déja!";
+            //return view('AjouterEtudiant');
+        }
+        
 
         return redirect('/dashboard/etudiants');
     }

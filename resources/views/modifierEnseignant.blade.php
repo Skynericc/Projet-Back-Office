@@ -30,8 +30,22 @@
     <input type="password" class="form-control" id="exampleInputPassword1" value="{{$enseignant->Mot_de_passe}}">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Roles</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="Roles" value="{{$enseignant->Roles}}">
+    <label for="exampleInputPassword1">Roles</label><br>
+    @php
+    $rolesss = explode(",", $enseignant->Roles);
+    @endphp
+    
+    @foreach($roles as $role)
+      
+        @if(in_array($role->Nom,$rolesss))
+          <input type="checkbox" name="role[]"  value ="{{$role->Nom}}"checked>
+          <label for=""> {{$role->Nom}} </label><br>
+        @else
+          <input class="form-check-input" type="checkbox" name="role[]" value="{{$role->Nom}}">
+          <label class="form-check-label" for="inlineCheckbox1">{{$role->Nom}}</label><br>
+        @endif  
+       
+    @endforeach
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Téléphone</label>

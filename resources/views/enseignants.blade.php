@@ -5,7 +5,7 @@
 <div class="div-tab">
 <h2>Enseignants</h2>
 
-<div id='AddButt'><a href="/dashboard/enseignants/ajouterenseignant"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter enseignant</button></a></div>
+<div id='AddButt'><a href="/dashboard/enseignants/AjouterEnseignant"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter enseignant</button></a></div>
 <div class="input-group" id='searchBox2'>
 <form type="get" action="{{ url('/searchEnseignant') }}" id='searchform'>
   <input type="submit" value="Find" class="btn btn-outline-primary" style="float: right"/>
@@ -38,7 +38,7 @@
         <td>{{$enseignant->Projets}}</td>
         <td class='del_edit_btn'>           
             <a href={{ "edit/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Supprimer</button></a>
         </td>
      </tr>
 @endforeach
