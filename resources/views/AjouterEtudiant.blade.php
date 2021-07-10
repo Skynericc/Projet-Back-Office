@@ -13,28 +13,28 @@
 @csrf
   <div class="form-group">
     <label for="exampleInputPassword1">Nom complet</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="Nom complet">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="Nom complet" required>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Confirmer le Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Filière</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="filiere" placeholder="Saisir la filière">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="filiere" placeholder="Saisir la filière" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Téléphone</label>
-    <input type="tel" class="form-control" id="exampleInputPassword1" name="tel" placeholder="Téléphone">
+    <input type="tel" class="form-control" id="exampleInputPassword1" name="tel" placeholder="Téléphone" required>
   </div>
   <div class="form-group">
     <label for="">Compétences</label>

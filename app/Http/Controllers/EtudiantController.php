@@ -56,7 +56,7 @@ class EtudiantController extends Controller
     public function search(){
         $search_text=$_GET['query'];
 
-        $search_etudiant=Etudiant::where('Nom_Complet','LIKE','%'.$search_text.'%')->get();
+        $search_etudiant=Etudiant::where('Nom_Complet','LIKE','%'.$search_text.'%')->orWhere('Fillière', 'LIKE','%'.$search_text.'%')->orWhere('Compétences', 'LIKE','%'.$search_text.'%')->orWhere('id', 'LIKE',$search_text)->get();
         
         return view('SearchEtudiant',compact('search_etudiant'));
     }

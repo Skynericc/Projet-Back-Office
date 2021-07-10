@@ -17,47 +17,33 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email </label>
-    <input type="email" class="form-control" id="exampleInputEmail1" name='email' aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" id="exampleInputEmail1" name='email' aria-describedby="emailHelp" placeholder="Enter email" required>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Confirmer le Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Téléphone</label>
-    <input type="tel" class="form-control" id="exampleInputPassword1" name="tel" placeholder="Téléphone">
+    <input type="tel" class="form-control" id="exampleInputPassword1" name="tel" placeholder="Téléphone" required>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Projets</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" name="projets" rows="3" placeholder="Saisir les projets proposés par cet enseignant"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="projets" rows="3" placeholder="Saisir les projets proposés par cet enseignant" ></textarea>
   </div>
   <label for="exampleInputPassword1">Les roles</label><br>
-
+  @foreach($roles as $role)
   <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="role[]" value="Post3">
-  <label class="form-check-label" for="inlineCheckbox1">Post3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name='role[]' value="Proj3">
-  <label class="form-check-label" for="inlineCheckbox2">Proj3</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="role[]" value="Proj5" >
-  <label class="form-check-label" for="inlineCheckbox3">Proj5</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="role[]" value="Post5" >
-  <label class="form-check-label" for="inlineCheckbox3">Post5</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="role[]" value="Affectaleatoire" >
-  <label class="form-check-label" for="inlineCheckbox3">AffectAleatoire</label>
-</div>
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="role[]" value='{{$role->Nom}}'>
+  <label class="form-check-label" for="inlineCheckbox1">{{$role->Nom}}</label>
+  </div>
+  @endforeach
+
 <br><br>
   
   <input type="submit" id='submit' value='submit' class="btn btn-primary"></input>

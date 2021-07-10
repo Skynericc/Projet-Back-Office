@@ -5,7 +5,7 @@
 <div class="div-tab">
 <h2>Enseignants</h2>
 
-<div id='AddButt'><a href="/dashboard/enseignants/ajouterenseignant"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter enseignant</button></a></div>
+<div id='AddButt'><a href="/dashboard/enseignants/AjouterEnseignant"><button id='add' type="button" class="btn btn-outline-primary"> + Ajouter enseignant</button></a></div>
 <div class="input-group" id='searchBox2'>
 <form type="get" action="{{ url('/searchEnseignant') }}" id='searchform'>
   <input type="submit" value="Find" class="btn btn-outline-primary" style="float: right"/>

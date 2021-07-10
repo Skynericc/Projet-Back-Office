@@ -58,7 +58,7 @@ Route::post('/dashboard/edit/role', [RolesController::class,'update']);
 Route::get('/dashboard/etudiants/AjouterEtudiant', [EtudiantController::class,'create']);
 Route::post('/dashboard/etudiants', [EtudiantController::class,'store']);
 
-Route::get('/dashboard/enseignant/AjouterEnseignant', [EnseignantController::class,'create']);
+Route::get('/dashboard/enseignants/AjouterEnseignant', [EnseignantController::class,'create']);
 Route::post('/dashboard/enseignants', [EnseignantController::class,'store']);
 
 Route::get('/dashboard/roles/AjouterRole', [RolesController::class,'create']);

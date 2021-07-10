@@ -19,7 +19,7 @@
 
                     {{ __('You are logged in!') }}
                     <br><br>
-                    <a href="/dashboard/etudiants">Go to site</a>
+                    <a href="/dashboard/etudiants">Go to Dashboard</a>
                 </div>
             </div>
         </div>

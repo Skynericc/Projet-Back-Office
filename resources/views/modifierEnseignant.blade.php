@@ -29,10 +29,14 @@
     <label for="exampleInputPassword1">Confirmer le Mot de passe</label>
     <input type="password" class="form-control" id="exampleInputPassword1" value="{{$enseignant->Mot_de_passe}}">
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Roles</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="Roles" value="{{$enseignant->Roles}}">
+  
+  @foreach($roles as $role)
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="role[]" value='{{$role->Nom}}'>
+  <label class="form-check-label" for="inlineCheckbox1">{{$role->Nom}}</label>
   </div>
+  @endforeach
+  
   <div class="form-group">
     <label for="exampleInputPassword1">Téléphone</label>
     <input type="number" class="form-control" id="exampleInputPassword1" name="Téléphone" value="{{$enseignant->Téléphone}}">

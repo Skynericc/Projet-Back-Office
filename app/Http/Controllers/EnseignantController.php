@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\Enseignant;
 class EnseignantController extends Controller
 {
@@ -22,7 +23,10 @@ class EnseignantController extends Controller
     }
     public function edit($id){
         $enseignant = Enseignant::find($id);
-        return view('modifierEnseignant',['enseignant'=>$enseignant]);
+        $roles = Role::all();
+
+
+        return view('modifierEnseignant',['enseignant'=>$enseignant],['roles' => $roles ]);
     }
     public function update(Request $req){
         $enseignant = Enseignant::find($req->id);
@@ -36,7 +40,9 @@ class EnseignantController extends Controller
         return redirect('/dashboard/enseignants');
     }
     public function create(){
-        return view('AjouterEnseignant');
+        $roles = Role::all();
+        
+        return view('AjouterEnseignant',['roles' => $roles ]);
     }
     public function store(){
 
@@ -66,8 +72,9 @@ class EnseignantController extends Controller
     public function search(){
         $search_text=$_GET['query'];
 
-        $search_enseignant=Enseignant::where('Nom_Complet','LIKE','%'.$search_text.'%')->get();
+        $search_enseignant=Enseignant::where('Nom_Complet','LIKE','%'.$search_text.'%')->orWhere('Projets', 'LIKE','%'.$search_text.'%')->orWhere('id', 'LIKE',$search_text)->get();
         
         return view('SearchEnseignant',compact('search_enseignant'));
     }
+    
 }
