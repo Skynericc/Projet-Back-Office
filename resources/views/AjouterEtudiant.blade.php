@@ -22,11 +22,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password" required>
+    <input type="password" class="form-control" id="password" name="mdp" placeholder="Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Confirmer le Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp" required>
+    <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Filière</label>
@@ -38,12 +38,26 @@
   </div>
   <div class="form-group">
     <label for="">Compétences</label>
-    <textarea cols='40' rows='5' placeholder="Compétences" name="compt" class="form-control"></textarea>
+    <textarea cols='40' rows='5' placeholder="Compétences" name="compt" class="form-control" required></textarea>
   </div>
   
   <input type="submit" class="btn btn-primary" value='submit'></input>
 </form>
+<script>
+  var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
 
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
 
 
 @endsection

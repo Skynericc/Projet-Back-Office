@@ -43,7 +43,10 @@ class RolesController extends Controller
         $role = new Role();
 
         $role->Nom = request('rolename');
-        $role->Description = request('inlineRadioOptions');
+        $role->Description = request('description');
+        $role->Nombre_Postulations = request('Nombre_Postulations');
+        $role->Nombre_Projets = request('Nombre_Projets');
+        $role->Maniere_Affectation = request('Maniere_Affectation');
         
 
         $role->save();

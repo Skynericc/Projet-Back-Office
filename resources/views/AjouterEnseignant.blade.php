@@ -13,7 +13,7 @@
 @csrf
   <div class="form-group">
     <label for="exampleInputPassword1">Nom complet</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="Nom complet">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="name" placeholder="Nom complet" required>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email </label>
@@ -22,11 +22,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="mdp" placeholder="Password" required>
+    <input type="password" class="form-control" id="password" name="mdp" placeholder="Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Confirmer le Mot de passe</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirmer mdp" required>
+    <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Téléphone</label>
@@ -34,21 +34,35 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Projets</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" name="projets" rows="3" placeholder="Saisir les projets proposés par cet enseignant" ></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="projets" rows="3" placeholder="Saisir les projets proposés par cet enseignant"></textarea>
   </div>
   <label for="exampleInputPassword1">Les roles</label><br>
+
   @foreach($roles as $role)
   <div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="role[]" value='{{$role->Nom}}'>
-  <label class="form-check-label" for="inlineCheckbox1">{{$role->Nom}}</label>
+    <input class="form-check-input" type="checkbox" name="role[]" value="{{$role->Nom}}">
+    <label class="form-check-label" for="inlineCheckbox1">{{$role->Nom}}</label>
   </div>
   @endforeach
-
 <br><br>
   
   <input type="submit" id='submit' value='submit' class="btn btn-primary"></input>
 </form>
+<script>
+  var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
 
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
 
 
 @endsection

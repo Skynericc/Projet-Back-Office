@@ -19,9 +19,9 @@ class CreateEnseignantsTable extends Migration
             $table->String('Nom_Complet');
             $table->String('Email');
             $table->String('Mot_de_passe');
-            $table->String('Roles');
+            $table->String('Roles')->nullable();
             $table->String('Téléphone');
-            $table->String('Projets');
+            $table->String('Projets')->nullable();
         });
     }
 

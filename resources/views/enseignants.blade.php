@@ -38,7 +38,7 @@
         <td>{{$enseignant->Projets}}</td>
         <td class='del_edit_btn'>           
             <a href={{ "edit/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-success">Modifier</button></a>
-            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger">Supprimer</button></a>
+            <a href={{ "delete/enseignant/".$enseignant['id'] }}><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Supprimer</button></a>
         </td>
      </tr>
 @endforeach
